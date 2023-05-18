@@ -1,11 +1,12 @@
 import { Box, Typography } from "@mui/material";
+import {useState} from "react";
+import { useQuery, useQueryClient, QueryClientProvider } from 'react-query';
+import ShowsSection from "./ShowsSection";
 
 export default function TeamYourShows$() {
-  return (
-    <Box sx={{ padding: 2, borderRadius: "5px", background: "rgba(0,0,0,.1)" }}>
-      <Typography fontSize="28px" fontWeight={800}>
-        Your Shows
-      </Typography>
-    </Box>
-  );
+  // const queryClient = useQueryClient();
+
+return (
+    <ShowsSection />
+);
 }
