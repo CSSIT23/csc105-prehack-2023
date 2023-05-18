@@ -1,12 +1,6 @@
-<<<<<<< HEAD
-// const express = require("express");
-// const mysql = require("mysql2");
-import express from "express";
-=======
 import mysql from "mysql2";
 import express from "express";
 
->>>>>>> 076b19abfb502d3dcd411f5395192cdaad5b3ab5
 const groupFifteenRouter = express.Router();
 
 //=========================Lyric======================
