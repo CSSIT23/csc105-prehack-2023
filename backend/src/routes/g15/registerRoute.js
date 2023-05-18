@@ -21,13 +21,14 @@ groupFifteenRouter.get("/track/:trackId", (req, res) => {
 groupFifteenRouter.get("/artist/:artistId",(req, res)=>{
   const { artistId } = req.params
 
-  const query = connection.query('SELECT id, name, profile_url FROM artists WHERE artists.id = ? and artists.name = ? and artists.profile_url = ?',[artistId], (err,rows)=>{
+  const query = connection.query('SELECT id, name, profile_url FROM artists WHERE artists.id = ?',[artistId], (err,rows)=>{
+    console.log(err, rows);
     return res.json({
       success: true,
       data: rows,
       error: null,
     });
-  })
+  });
 });
 
 ///////////////////////////////////////////////////////

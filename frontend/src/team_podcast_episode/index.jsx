@@ -5,9 +5,6 @@ import ArrowCircleDownOutlinedIcon from '@mui/icons-material/ArrowCircleDownOutl
 import PlayCircleFilledWhiteIcon from '@mui/icons-material/PlayCircleFilledWhite';
 import ControlPointIcon from '@mui/icons-material/ControlPoint';
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
-import AccountCircleIcon from '@mui/icons-material/AccountCircle';
-import { green } from "@mui/material/colors";
-import { NavLink } from "react-router-dom";
 
 export default function TeamPodcastEpisode$() {
   const Btn={
@@ -18,20 +15,12 @@ export default function TeamPodcastEpisode$() {
     bgcolor:'black',
     margin:1
   }
-  const install={
-    boxSizing:'border-box',
-    borderRadius:'100px',
-    bgcolor:'black',
-    opacity:'0.5',
-    textTranform:"none"
-  }
   return (
     <Box sx={{  borderRadius: "5px", 
     // height: '100vh',
     // width: '100vw',
     background: 'linear-gradient(transparent, rgba(0, 0, 0, 1))',
-    bgcolor: 'rgb(221,110,15)' }}>
-     
+    bgcolor: 'rgb(32, 87, 100)' }}>
       <Toolbar>
         <Box sx={{display:'flex',
                   flexGrow: 1}}>
@@ -43,81 +32,54 @@ export default function TeamPodcastEpisode$() {
         </IconButton>
         </Box>
         <Box>
-          <Button sx={install}
-            variant="contained">
+          <Button sx={{boxSizing:'border-box',
+                       borderRadius:'100px',
+                       bgcolor:'black',
+                        opacity:'0.5',
+                      }}
+                       variant="contained">
             <ArrowCircleDownOutlinedIcon/>
             <Typography variant="p" sx={{
-              fontSize:'0.6rem',
+              fontSize:'0.8rem',
               padding:'3px',
-              textTranform:"none",
+              textTranform:' capitalize',
              
             }}>Install App</Typography>
           </Button>
-          <IconButton size='large'>
-            <AccountCircleIcon/>
-          </IconButton>
+          <Avatar></Avatar>
         </Box>
+        
       </Toolbar>
       <Box>
         <Grid container spacing={2}>
-          <Grid item lg={2} >
+          <Grid item lg={2}>
           <img src="" alt="image"></img>
           </Grid>
           <Grid item lg={10}>
-            <Typography variant="h7" sx={{fontSize: '0.6rem',
-                                          fontWeight: '600'}}>Podcast Episode<br /><br /></Typography>
-            <Typography variant='h5'sx={{fontSize: '1.5rem',
-                                          fontWeight: '600'}}>Description<br /><br /></Typography>
-            <Typography sx={{fontSize: '0.9rem',
-                            fontWeight: '500'}}>The Secret Sauce</Typography>
+            <Typography>Podcast Episode</Typography>
+            <Typography>Description</Typography>
+            <Typography>The Secret Sauce</Typography>
           </Grid>
         </Grid>
-      </Box><br /><br /><br /><br />
-      
-      <Box sx={{bgcolor: 'rgb(60, 60, 60)',
-                background: 'linear-gradient(transparent, rgba(0, 0, 0, 1))',
+      </Box>
+      <Box sx={{background: 'linear-gradient(transparent, rgba(0, 0, 0, 1))',
                 width:'100vw',
                 height:'100vh',
-
-                paddingLeft: '20px'
-
+                overflow:'hidden',
                 }}>
-        <Typography sx={{fontSize: '0.6rem',
-                         opacity:'0.5'}}> Date and time</Typography>
-                         <br/>
+        <Typography> Date and time</Typography>
         <Box>
-          <Button sx={{color:'green',
-                       width:'8%' }}><PlayCircleFilledWhiteIcon sx={{fontSize:'65px'}}/></Button>
-          <Button sx={{color:'white',
-                        opacity:'0.4',
-                        width:'5%'}}><ControlPointIcon sx={{fontSize:'30px'}}/></Button>
-          <Button sx={{color:'white',
-                        opacity:'0.4',
-                        width:'5%'}}><MoreHorizIcon sx={{fontSize:'30px'}}/></Button>
+          <Button><PlayCircleFilledWhiteIcon/></Button>
+          <Button><ControlPointIcon/></Button>
+          <Button><MoreHorizIcon/></Button>
         </Box>
-        <br/>
         <Box>
-          <Typography variant="h7" sx={{
-            fontSize:'1rem',
-            fontWeight:'600'
-          }}>Episode Description<br/><br/></Typography>
-          <Typography  sx={{
-            fontSize:'0.7rem',
-              opacity:'0.5'}}>Description</Typography>
+          <Typography>Episode Description</Typography>
+          <Typography>Description</Typography>
         </Box>
-        <NavLink replace to="/show/:podcastShowId">
-        <Button sx={{boxSizing:'border-box',
-                      border:'0.5px solid white',
-                       borderRadius:'100px',
-                       bgcolor:'black',
-                       opacity:'0.5'
-                      }}><Typography sx={{fontSize:'0.5rem', color:'white',fontWeight:'700'}}>See all episodes</Typography>
-                      </Button>
-        </NavLink>
-       
+        <Button>See all episodes</Button>
       </Box>
       
     </Box>
   );
 }
-

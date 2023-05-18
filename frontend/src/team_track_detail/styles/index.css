@@ -1,0 +1,33 @@
+.Content_Lyrics {
+    padding-bottom: 40px;
+}
+
+.Grid_Half {
+    display: flex;
+    flex-direction: row;
+    padding-top: 40px;
+}
+
+.Grid_Padding_Left {
+    padding-left: 30%;
+    padding-right: 20%;
+}
+
+.Hero_Song {
+    color: aqua;
+    display: flex;
+}
+
+.Grid_Half {
+    display: flex;
+    flex-direction: row;
+}
+
+.Grid_Hero {
+    padding-left: 40px;
+    padding-top: 150px;
+}
+
+.Hero_Artist {
+    width: 300px;
+}

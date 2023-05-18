@@ -20,6 +20,7 @@ export default function Body({ children }) {
         paddingRight: 2,
         overflowY: "auto",
         paddingBottom: 2,
+        overflow: "visible"
       }}
     >
       {children}

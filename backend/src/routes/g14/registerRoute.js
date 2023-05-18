@@ -8,9 +8,10 @@ groupFourteenRouter.get("/", (req, res) => {
 
 
 groupFourteenRouter.get("/episode/:podcastEpisodeId",(req,res)=>{
-  const  podcastEpisodeId = req.query.podcastEpisodeId;
+  const  podcastEpisodeId = req.params.podcastEpisodeId;
   // console.log(podcastEpisodeId);
-  connection.query(`Select * from podcast_episodes where id=${podcastEpisodeId}`,(err,rows)=>{
+  connection.query(`select * from podcast_episodes
+  join (podcast_shows join (podcast_show_categories psc join podcast_categories pc on psc.category_id = pc.id) join podcast_show_categories p on podcast_shows.id = p.show_id) where podcast_episodes.id=${podcastEpisodeId}`,(err,rows)=>{
     if (err) {
       res.json({
         success: false,
