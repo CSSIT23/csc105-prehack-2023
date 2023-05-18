@@ -1,28 +1,29 @@
-import { Card, CardActionArea, CardContent, CardMedia, Typography } from '@mui/material'
-import React from 'react'
+import {
+  Card,
+  CardActionArea,
+  CardContent,
+  CardMedia,
+  Typography,
+} from "@mui/material";
+import React from "react";
 
 function GenreCard() {
   return (
-    <Card sx={{ width:"200px", height:"200px" }}>
-      <CardActionArea>
-        <CardMedia
-          component="img"
-          height=""
-          image=""
-          alt=""
-        />
-        <CardContent>
-          <Typography gutterBottom variant="h5" component="div">
-            Podcast
-          </Typography>
-          <Typography variant="body2" color="text.secondary">
-            Lizards are a widespread group of squamate reptiles, with over 6,000
-            species, ranging across all continents except Antarctica
-          </Typography>
-        </CardContent>
-      </CardActionArea>
+    <Card sx={cardStyle}>
+      <CardContent sx={{ padding: "20px" }}>Card 1</CardContent>
     </Card>
-  )
+  );
 }
 
-export default GenreCard
+export default GenreCard;
+
+const cardStyle = {
+  backgroundColor: "#f2f2f2",
+  borderRadius: "5px",
+  minWidth: "100px",
+  height:"130px",
+
+  // backgroundImage: 'url("/path/to/image.jpg")',
+  backgroundSize: 'cover',
+  backgroundPosition: 'center',
+};
