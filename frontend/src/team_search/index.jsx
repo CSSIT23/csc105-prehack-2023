@@ -31,7 +31,7 @@ export default function TeamSearch$() {
         </Grid>
       </Grid>
 
-      <SearchResult/>
+      {/* <SearchResult/> */}
     </Box>
   );
 }

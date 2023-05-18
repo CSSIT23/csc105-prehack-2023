@@ -8,7 +8,7 @@ function BigSong() {
         component="img"
         // alt={title}
         height="140"
-        image={"https://picsum.photos/200/300"}
+        image={'https://picsum.photos/150/150'}
         sx={{ width: "150px" }}
       />
       <CardContent>

@@ -10,7 +10,7 @@ function SmallSong() {
             component="img"
             // alt={title}
             height="80"
-            image={'https://picsum.photos/300/300'}
+            image={'https://picsum.photos/80/80'}
           />
         </Grid>
         <Grid item xs={8}>
@@ -30,7 +30,6 @@ function SmallSong() {
           xs={2}
           container
           justifyContent="flex-end"
-          
         >
           <Typography variant="body2" color="text.secondary">
             {/* Duration: {duration} */}
