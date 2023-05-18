@@ -1,8 +1,10 @@
-import express from "express";
+
+import express from "express"
+
 
 const groupFifteenRouter = express.Router();
 
-groupFifteenRouter.get("/", (req, res) => {
+groupFifteenRouter.get("/track/:trackId", (req, res) => {
   res.send("Hello World");
 });
 
