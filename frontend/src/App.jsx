@@ -6,5 +6,4 @@ import "@share/styles/normalise.scss";
 function App() {
   return <RouterProvider router={router} />;
 }
-
 export default App;
