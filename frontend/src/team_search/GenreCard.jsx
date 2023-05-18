@@ -7,10 +7,10 @@ import {
 } from "@mui/material";
 import React from "react";
 
-function GenreCard() {
+function GenreCard({name}) {
   return (
     <Card sx={cardStyle}>
-      <CardContent sx={{ padding: "20px" }}>Card 1</CardContent>
+      <CardContent sx={{ padding: "20px" }}>{name}</CardContent>
     </Card>
   );
 }
