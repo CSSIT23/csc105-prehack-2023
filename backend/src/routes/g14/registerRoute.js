@@ -9,7 +9,7 @@ groupFourteenRouter.get("/", (req, res) => {
 
 groupFourteenRouter.get("/episode/:podcastEpisodeId",(req,res)=>{
   const  podcastEpisodeId = req.query.podcastEpisodeId;
-  console.log(podcastEpisodeId);
+  // console.log(podcastEpisodeId);
   connection.query(`Select * from podcast_episodes where id=${podcastEpisodeId}`,(err,rows)=>{
     if (err) {
       res.json({
