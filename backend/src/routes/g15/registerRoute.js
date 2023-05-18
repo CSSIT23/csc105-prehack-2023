@@ -5,7 +5,7 @@ const groupFifteenRouter = express.Router();
 
 groupFifteenRouter.get("/track/:trackId", (req, res) => {
   const { trackId }  = req.params
-
+  const Neo = 0
 
   const query = connection.query('SELECT lyric FROM tracks, track_lyrics WHERE tracks.id = ? and tracks.id = track_lyrics.track_id order by `order`', [trackId], (err, rows) => {
     if (err) {
@@ -21,9 +21,6 @@ groupFifteenRouter.get("/track/:trackId", (req, res) => {
         data: rows,
         error: null,
       });
-  
-
-
     }
   });
 });
