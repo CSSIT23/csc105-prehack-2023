@@ -65,13 +65,15 @@ groupOneRouter.get("/getData", (req, res) => {
 
 groupOneRouter.get("/getFeedItems", (req, res) => {
   const user_id = req.body.user_id;
-  var sql = mysql.format("SELECT * FROM feed_kinds WHERE user_id = '?'", [
-    user_id,
-  ]);
+  var sql = mysql.format(
+    "SELECT * FROM feed_kinds JOIN users ON feed_kinds.user_id = users.id WHERE user_id = '?'",
+    [user_id]
+  );
   connection.query(sql, (err, rows) => {
     if (err) {
       return res.json({
         success: false,
+        error: err,
       });
     } else {
       return res.json({

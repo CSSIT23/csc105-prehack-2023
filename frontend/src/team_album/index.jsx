@@ -1,4 +1,4 @@
-import { Box, Typography } from "@mui/material";
+import { Box, Typography, Stack } from "@mui/material";
 import PlayCircleFilledIcon from "@mui/icons-material/PlayCircleFilled";
 import { IconButton } from "@mui/material";
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
@@ -133,6 +133,13 @@ export default function TeamAlbum$() {
           </Box>
           <hr/>
       </Box>
+          <Box sx={{display:'flex', flexDirection:'row'}}>
+              <Typography variant='body1'>#</Typography>
+              <Box sx ={{justifyContent:'space-between', display:'flex', flexDirection:'row'}}>
+              <Typography variant='body1'>Title</Typography>
+              <AccessTimeIcon />
+              </Box>
+          </Box>
     </div>
   );
 }
