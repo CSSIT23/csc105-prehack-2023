@@ -27,7 +27,7 @@ app.use(cors({ origin: ["http://localhost:5173"], credentials: true }));
 
 app.use(express.json());
 
-initDatabase();
+global.connection = initDatabase();
 
 registerGroupOne(app);
 registerGroupTwo(app);
@@ -48,5 +48,5 @@ registerGroupSixteen(app);
 registerGroupSeventeen(app);
 
 app.listen(port, () => {
-  console.log(`App is listenning on http://localhost:${port}`);
+	console.log(`App is listenning on http://localhost:${port}`);
 });
