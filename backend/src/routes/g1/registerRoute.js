@@ -63,53 +63,17 @@ groupOneRouter.get("/getData", (req, res) => {
   });
 });
 
-groupOneRouter.get("/getFeedKinds", (req, res) => {
-  const user_id = req.body.user_id;
-  var sql_feedkinds = mysql.format(
-    "SELECT * FROM feed_kinds WHERE user_id = '?'",
-    [user_id]
-  );
-  connection.query(sql_feedkinds, (err, feedItems_rows) => {
-    if (err) {
-      return res.json({
-        success: false,
-      });
-    } else {
-      const feed_id = feedItems_rows.feed_id;
-      var sql_feeditems = mysql.format(
-        "SELECT * FROM feed_items WHERE kind_id = '?'",
-        [feed_id]
-      );
-      connection.query(sql_feeditems, (err, feedKinds_rows) => {
-        if (err) {
-          return res.json({
-            success: false,
-          });
-        } else {
-          const feed_id = feedItems_rows.feed_id;
-          var sql_feeditems = mysql.format(
-            "SELECT * FROM feed_items WHERE kind_id = '?'",
-            [feed_id]
-          );
-          return res.json({
-            success: true,
-            data: rows,
-          });
-        }
-      });
-    }
-  });
-});
-
 groupOneRouter.get("/getFeedItems", (req, res) => {
   const user_id = req.body.user_id;
-  var sql = mysql.format("SELECT * FROM feed_kinds WHERE user_id = '?'", [
-    user_id,
-  ]);
+  var sql = mysql.format(
+    "SELECT * FROM feed_kinds JOIN users ON feed_kinds.user_id = users.id WHERE user_id = '?'",
+    [user_id]
+  );
   connection.query(sql, (err, rows) => {
     if (err) {
       return res.json({
         success: false,
+        error: err,
       });
     } else {
       return res.json({
