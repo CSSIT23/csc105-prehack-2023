@@ -63,25 +63,6 @@ groupOneRouter.get("/getData", (req, res) => {
     });
 });
 
-<<<<<<< HEAD
-groupOneRouter.get("/getFeedItems", (req, res) => {
-    const user_id = req.body.user_id;
-    var sql = mysql.format("SELECT * FROM feed_kinds WHERE user_id = '?'", [
-        user_id,
-    ]);
-    connection.query(sql, (err, rows) => {
-        if (err) {
-            return res.json({
-                success: false,
-            });
-        } else {
-            return res.json({
-                success: true,
-                data: rows,
-            });
-        }
-    });
-=======
 groupOneRouter.get("/getFeedKinds", (req, res) => {
   const user_id = req.body.user_id;
   var sql = mysql.format(
@@ -101,7 +82,6 @@ groupOneRouter.get("/getFeedKinds", (req, res) => {
       });
     }
   });
->>>>>>> 8a04f1a41e2eff34f5bf5e90abd65c824f90e38b
 });
 export default function registerGroupOne(app) {
     app.use("/groupOne", groupOneRouter);
