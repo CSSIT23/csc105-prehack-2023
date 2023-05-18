@@ -1,19 +1,32 @@
-import { Box, Typography } from "@mui/material";
+import { Box, Typography, Stack } from "@mui/material";
 import PlayCircleFilledIcon from "@mui/icons-material/PlayCircleFilled";
 import { IconButton } from "@mui/material";
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
+import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
+import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
-import { Stack } from "@mui/material";
+import { useEffect, useState } from "react";
+import Axois from "../share/axiosInstance";
 
 export default function TeamAlbum$() {
+  const [data, setData] = useState([]);
+  const eiei = async () => {
+    await Axois.get("groupEight/album/1").then((response) =>
+      setData(response.data)
+    );
+  };
+  useEffect(() => {
+    eiei();
+  });
+  
   const mockupdata = {
     id: 1234,
     create_at: "170347",
     deleted_at: "",
-    name: "Loonk Too Song",
+    name: "frozen 2 (original motion picture soundtrack/deluxe edition)",
     artwork_url:
-      "https://i.pinimg.com/originals/5d/8d/fc/5d8dfcfa9bcfb964469f02572b57574d.jpg",
+      "https://i.scdn.co/image/ab67616d0000b2736ff59d18c018a2845758deed",
   };
 
   const pictureStyle = {
@@ -28,24 +41,30 @@ export default function TeamAlbum$() {
   const marginPage = {
     marginLeft: "2vh",
     marginRight: "2vh",
+    
+  };
+
+  const bottomSpace = {
+    background: "linear-gradient(to top, black, transparent)",
   };
 
   return (
-    <div style={marginPage}>
+    <div style={{backgroundColor:"#1c4cb9",}}>
+    <div style={marginPage} >
       {/* <Typography fontSize="28px" fontWeight={800}>
         Album based on `:albumId`
       </Typography> */}
 
       {/* button above*/}
-      <IconButton style={{backgroundColor:"black", color:"white", justifyItems: "center"}}><ArrowBackIosNewIcon/></IconButton>
-      <IconButton style={{backgroundColor:"black", color:"white", justifyItems: "center", opacity: "0.5"}}><ArrowForwardIosIcon/></IconButton>
+      <IconButton style={{backgroundColor:"black", color:"white", justifyItems: "center",marginBottom:"30px", marginRight:"10px"}}><ArrowBackIosNewIcon/></IconButton>
+      <IconButton style={{backgroundColor:"black", color:"white", justifyItems: "center", opacity: "0.5", marginBottom:"30px"}}><ArrowForwardIosIcon/></IconButton>
 
       {/* top info container */}
       <Box sx={{ display: "flex", flexDirection: "row" }}>
         {/* picture */}
         <Box
           sx={{
-            width: "12rem",
+            width: "17rem",
             position: "relative",
             paddingBottom: "15rem",
           }}
@@ -57,9 +76,10 @@ export default function TeamAlbum$() {
           />
         </Box>
         {/* top info */}
-        <Box sx={{ margin: "2rem" }}>
-          <h6 sx={{ margin: "0px" }}>Compilation</h6>
-          <h2 sx={{ margin: "0px" }}>{mockupdata.name}</h2>
+        <Box sx={{ marginTop: "4.2rem", marginLeft:"2rem"}}>
+          <Box sx={{marginBottom:"0px"}}>
+          <h6 style={{ margin: "0px", marginBottom:"10px", fontSize:"12px", fontWeight:"bold" }}>Compilation</h6>
+          <h1 style={{ marginTop:"10px", marginBottom:"10px", fontWeight:"bold" }}>{mockupdata.name}</h1>
           <Box
             sx={{
               display: "flex",
@@ -81,8 +101,37 @@ export default function TeamAlbum$() {
               Various Artists • 2019 • 46 songs, 2 hr 9 min
             </p>
           </Box>
+          </Box>
+        </Box>
+
+        
+
+      </Box>
+
+      
+    </div>
+    {/* bottom info */}
+    <Box style={bottomSpace}>
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: "row",
+            alignItems: "center",
+          }}
+        >
+          <PlayCircleFilledIcon
+            sx={{ color: "#1ed760", fontSize: "4rem", margin: "1rem" }}
+          />
+          <FavoriteBorderIcon />
+          <MoreHorizIcon />
+          
 
         </Box>
+        <Box sx={{display:"flex", flexDirection:"row", alignItems:"center" }}>
+            <p>#  Title</p> 
+            <IconButton style={{color:"white", marginLeft:"50rem"}}><AccessTimeIcon/></IconButton>
+          </Box>
+          <hr/>
       </Box>
           <Box sx={{display:'flex', flexDirection:'row'}}>
               <Typography variant='body1'>#</Typography>

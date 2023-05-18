@@ -75,13 +75,13 @@ export default function TeamAboutArtist$() {
 			<Grid container direction="row">
 				<Grid item xs={3} sm={3}>
 					<ListenerFollower listener={artist.listener} count={artist.count} follower={artist.followers} />
-					{country.map((item, index) => (
+					{/* {country.map((item, index) => (
 						<ListenerEachCountry key={index} country_name={item.country_name} count={item.count} />
 					))}
 
 					{country.map((country, index) => (
 						<ListenerEachCountry key={index} country={country} />
-					))}
+					))} */}
 				</Grid>
 
 				<Grid item xs={9} sm={9} >
