@@ -18,6 +18,7 @@ groupEightRouter.get("/album/:albumId", async (req, res) => {
           album_id: albumId,
           album_name: result[0].album_name,
           year: result[0].year,
+          url:result[0].url,
           total_duration: totalDuration,
           tracks: result.map((row) => ({
             track_id: row.track_id,
