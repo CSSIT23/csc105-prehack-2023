@@ -12,12 +12,22 @@
   "dependencies": {
     "@emotion/react": "^11.11.0",
     "@emotion/styled": "^11.11.0",
+    "@mui/icons-material": "^5.11.16",
+<<<<<<< HEAD
     "@mui/material": "^5.13.0",
     "axios": "^1.4.0",
+<<<<<<< HEAD
+=======
+=======
+    "@mui/material": "^5.13.1",
+>>>>>>> 124ef5eaa333301447940783d3a88f95f5007fdf
+>>>>>>> 8a04f1a41e2eff34f5bf5e90abd65c824f90e38b
     "immer": "^10.0.2",
+    "js-cookie": "^3.0.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-hot-toast": "^2.4.1",
+    "react-query": "^3.39.3",
     "react-router-dom": "^6.11.1",
     "zustand": "^4.3.8"
   },
