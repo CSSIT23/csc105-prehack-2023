@@ -63,7 +63,7 @@ groupOneRouter.get("/getData", (req, res) => {
   });
 });
 
-groupOneRouter.get("/getFeedItems", (req, res) => {
+groupOneRouter.get("/getFeedKinds", (req, res) => {
   const user_id = req.body.user_id;
   var sql = mysql.format("SELECT * FROM feed_kinds WHERE user_id = '?'", [
     user_id,
