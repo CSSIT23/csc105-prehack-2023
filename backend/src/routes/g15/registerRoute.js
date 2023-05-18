@@ -1,5 +1,5 @@
-const express = require("express");
-const mysql = require("mysql2");
+import express from "express";
+// const mysql = require("mysql2");
 
 const groupFifteenRouter = express.Router();
 
