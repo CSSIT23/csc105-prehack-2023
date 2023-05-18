@@ -1,7 +1,16 @@
 import { Box, Typography } from "@mui/material";
 import { useState } from "react";
+import axios from "axios";
 
 export default function TeamRecentlyPlayed$() {
+  axios
+    .get("http://localhost:8000/groupOne/getRecentPlaylists", {
+      data: { user_id: 18 },
+    })
+    .then((res) => {
+      console.log(res);
+    });
+
   const [songs, setSongs] = useState([
     {
       title: "Reputation",
