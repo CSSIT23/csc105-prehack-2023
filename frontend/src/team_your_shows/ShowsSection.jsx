@@ -12,12 +12,12 @@ export default function ShowsSection() {
 
   const Axios = axios.create({ baseURL: 'http://localhost:6105', withCredentials: true });
 
-  useEffect(() => {
-    Axios.get('/').then((res) => {
-    console.log(res);
-    setShows(res.data.data);
-    });
-  }, [user]);
+//   useEffect(() => {
+//     Axios.get('/').then((res) => {
+//     console.log(res);
+//     setShows(res.data.data);
+//     });
+//   }, [user]);
 
 //   const queryClient = useQueryClient();
 
