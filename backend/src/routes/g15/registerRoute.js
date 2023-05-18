@@ -1,15 +1,10 @@
-
-import express from "express"
-
+import mysql from "mysql2";
+import express from "express";
 
 const groupFifteenRouter = express.Router();
 
+//=========================Lyric======================
 groupFifteenRouter.get("/track/:trackId", (req, res) => {
-<<<<<<< Updated upstream
-  res.send("Hello World");
-});
-
-=======
   const { trackId }  = req.params
 
   const query = connection.query('SELECT lyric FROM tracks, track_lyrics WHERE tracks.id = ? and tracks.id = track_lyrics.track_id order by `order`', [trackId], (err, rows) => {
@@ -22,7 +17,7 @@ groupFifteenRouter.get("/track/:trackId", (req, res) => {
     
   });
 });
-
+//=========================Artist======================
 groupFifteenRouter.get("/artist/:artistId",(req, res)=>{
   const { artistId } = req.params
 
@@ -36,7 +31,6 @@ groupFifteenRouter.get("/artist/:artistId",(req, res)=>{
 });
 
 ///////////////////////////////////////////////////////
->>>>>>> Stashed changes
 export default function registerGroupFifteen(app) {
   app.use("/groupFifteen", groupFifteenRouter);
 }
