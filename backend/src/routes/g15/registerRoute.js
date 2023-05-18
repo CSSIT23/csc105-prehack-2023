@@ -1,8 +1,9 @@
-import express from "express";
+const express = require("express");
+const mysql = require("mysql2");
 
 const groupFifteenRouter = express.Router();
 
-groupFifteenRouter.get("/", (req, res) => {
+groupFifteenRouter.get("/track/:trackId", (req, res) => {
   res.send("Hello World");
 });
 
