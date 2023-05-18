@@ -18,12 +18,19 @@ export default function TeamPodcastEpisode$() {
     bgcolor:'black',
     margin:1
   }
+  const install={
+    boxSizing:'border-box',
+    borderRadius:'100px',
+    bgcolor:'black',
+    opacity:'0.5',
+    textTranform:"none"
+  }
   return (
     <Box sx={{  borderRadius: "5px", 
     // height: '100vh',
     // width: '100vw',
     background: 'linear-gradient(transparent, rgba(0, 0, 0, 1))',
-    bgcolor: 'rgb(32, 87, 100)' }}>
+    bgcolor: 'rgb(221,110,15)' }}>
      
       <Toolbar>
         <Box sx={{display:'flex',
@@ -36,17 +43,13 @@ export default function TeamPodcastEpisode$() {
         </IconButton>
         </Box>
         <Box>
-          <Button sx={{boxSizing:'border-box',
-                       borderRadius:'100px',
-                       bgcolor:'black',
-                        opacity:'0.5',
-                      }}
-                       variant="contained">
+          <Button sx={install}
+            variant="contained">
             <ArrowCircleDownOutlinedIcon/>
             <Typography variant="p" sx={{
               fontSize:'0.6rem',
               padding:'3px',
-              textTranform:' capitalize',
+              textTranform:"none",
              
             }}>Install App</Typography>
           </Button>
