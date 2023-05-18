@@ -40,7 +40,7 @@ const groupSeventeenRouter = express.Router();
               if(playlistRow[0]){
                 res.json({
                   success: true,
-                  playlist: playlistRow[0],
+                  playlist: playlistRow,
                   data: profileRow[0],
                   error: null,
                 });
