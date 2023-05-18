@@ -4,11 +4,12 @@ import axios from "axios";
 
 export default function TeamRecentlyPlayed$() {
   axios
-    .get("http://localhost:8000/groupOne/getRecentPlaylists", {
-      data: { user_id: 18 },
+    .post("http://localhost:8000/groupOne/getRecentPlaylists", {
+      params: { user_id: 18 },
     })
     .then((res) => {
-      console.log(res);
+      console.log(res.data.data);
+      setSongs(res.data.data);
     });
 
   const [songs, setSongs] = useState([
@@ -49,19 +50,19 @@ export default function TeamRecentlyPlayed$() {
         Good Morning
       </Typography>
       <div className="grid lg:grid-cols-2 xl:grid-cols-3 gap-6">
-        {songs.map((song, index) => {
+        {songs.map((song) => {
           return (
             <div
-              key={index}
+              key={song.id}
               className=" flex items-center rounded-sm w-full bg-[#302641]"
             >
               <img
                 className="w-20 rounded-l-sm"
-                src={song.img_link}
+                src={song.cover_url}
                 alt="album_cover"
               />
               <div>
-                <p className="font-medium pl-4">{song.title}</p>
+                <p className="font-medium pl-4">{song.name}</p>
               </div>
             </div>
           );
