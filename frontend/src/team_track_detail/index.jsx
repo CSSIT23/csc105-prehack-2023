@@ -1,11 +1,14 @@
 import { Box, Typography } from "@mui/material";
+import TD_Hero from "../team_track_detail/components/TD_Hero"
+import TD_Content from "../team_track_detail/components/TD_Content"
+import TD_FakeButtons from "./components/TD_FakeButtons";
 
 export default function TeamTrackDetail$() {
   return (
-    <Box sx={{ padding: 2, borderRadius: "5px", background: "rgba(0,0,0,.1)" }}>
-      <Typography fontSize="28px" fontWeight={800}>
-        Track Detail
-      </Typography>
-    </Box>
+    <div>
+      <TD_Hero />
+      <TD_FakeButtons/>
+      <TD_Content />
+    </div>
   );
 }
