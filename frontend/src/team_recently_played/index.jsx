@@ -1,17 +1,7 @@
 import { Box, Typography } from "@mui/material";
 import { useState } from "react";
-import axios from "axios";
 
 export default function TeamRecentlyPlayed$() {
-  axios
-    .post("http://localhost:8000/groupOne/getRecentPlaylists", {
-      params: { user_id: 18 },
-    })
-    .then((res) => {
-      console.log(res.data.data);
-      setSongs(res.data.data);
-    });
-
   const [songs, setSongs] = useState([
     {
       title: "Reputation",
@@ -50,19 +40,19 @@ export default function TeamRecentlyPlayed$() {
         Good Morning
       </Typography>
       <div className="grid lg:grid-cols-2 xl:grid-cols-3 gap-6">
-        {songs.map((song) => {
+        {songs.map((song, index) => {
           return (
             <div
-              key={song.id}
+              key={index}
               className=" flex items-center rounded-sm w-full bg-[#302641]"
             >
               <img
                 className="w-20 rounded-l-sm"
-                src={song.cover_url}
+                src={song.img_link}
                 alt="album_cover"
               />
               <div>
-                <p className="font-medium pl-4">{song.name}</p>
+                <p className="font-medium pl-4">{song.title}</p>
               </div>
             </div>
           );

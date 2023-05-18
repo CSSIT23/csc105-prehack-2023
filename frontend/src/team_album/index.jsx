@@ -3,6 +3,8 @@ import PlayCircleFilledIcon from "@mui/icons-material/PlayCircleFilled";
 import { IconButton } from "@mui/material";
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
+import AccessTimeIcon from '@mui/icons-material/AccessTime';
+import { Stack } from "@mui/material";
 
 export default function TeamAlbum$() {
   const mockupdata = {
@@ -79,8 +81,16 @@ export default function TeamAlbum$() {
               Various Artists • 2019 • 46 songs, 2 hr 9 min
             </p>
           </Box>
+
         </Box>
       </Box>
+          <Box sx={{display:'flex', flexDirection:'row'}}>
+              <Typography variant='body1'>#</Typography>
+              <Box sx ={{justifyContent:'space-between', display:'flex', flexDirection:'row'}}>
+              <Typography variant='body1'>Title</Typography>
+              <AccessTimeIcon />
+              </Box>
+          </Box>
     </div>
   );
 }
