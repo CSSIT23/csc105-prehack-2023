@@ -1,16 +1,15 @@
 import express from "express";
-const mysql = require('mysql');
 const groupTwoRouter = express.Router();
 
-groupTwoRouter.get("/", (req, res) => {
-  res.send("Hello World");
-});
+// groupTwoRouter.get("/", (req, res) => {
+//   res.send("Hello World");
+// });
 
 export default function registerGroupTwo(app) {
   app.use("/groupTwo", groupTwoRouter);
 }
 
-app.get('/', (req, res) => {
+groupTwoRouter.get('/', (req, res) => {
   const userId = req.query.userId; //userId is passed as a query parameter (still don't know )
 
   // fetch podcast followings data for the given user
@@ -64,7 +63,7 @@ connection.query('SELECT * FROM podcast_followings WHERE user_id = ?', [userId],
 
 });
 
-app.get('/section/shows', (req, res) => {
+groupTwoRouter.get('/section/shows', (req, res) => {
   const userId = req.query.userId; //userId is passed as a query parameter
 
   // Fetch podcast followings data for the given user
