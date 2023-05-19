@@ -1,0 +1,31 @@
+.button {
+    display: formHelperTextClasses;
+    height: 40px;
+    padding: 0;
+    background: grey;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    overflow: hidden;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.button:hover,
+.button:active {
+    background: #0b89a8;
+}
+
+.button_text,
+.button_icon {
+    display: inline-flex;
+    align-items: center;
+    padding: 0 8px;
+    height: 100%;
+}
+
+.button_icon{
+    font-size: 1.5rem;
+    background: rgba(0, 0, 0, 0.1);
+}
